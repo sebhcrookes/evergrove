@@ -1,3 +1,5 @@
+package com.evergrove;
+
 public class Vector2i {
 
     private int x;
