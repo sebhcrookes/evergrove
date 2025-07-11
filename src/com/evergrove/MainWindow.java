@@ -85,7 +85,7 @@ public class MainWindow extends JFrame {
             }
 
             // Scale image to given size, and draw the image centered in the window
-            Image scaledImage = pBuffer.getScaledInstance(imageSizeX, imageSizeY, Image.SCALE_SMOOTH);
+            Image scaledImage = pBuffer.getScaledInstance(imageSizeX, imageSizeY, Image.SCALE_REPLICATE);
             g.drawImage(scaledImage, (windowSizeX - imageSizeX) / 2, (windowSizeY - imageSizeY) / 2, this);
         } else {
             // If resizing not supported, simply draw the image to the window

@@ -1,5 +1,6 @@
 package com.evergrove;
 
+import com.evergrove.rendering.Image;
 import com.evergrove.rendering.Renderer;
 
 public class Evergrove {
@@ -40,8 +41,10 @@ public class Evergrove {
 
             // Render all components and objects
 
-            renderer.setPixel(10, 10, 0xFF00FF00);
             renderer.drawRect(new Vector2i(0, 0), config.getContentSize(), 0xFFFFFFFF);
+            renderer.fillRect(new Vector2i(100, 100), new Vector2i(200, 50), 0xFF00FF00);
+
+            renderer.drawText("This is a test of the text rendering system!\n... and newline capabilities", new Vector2i(10, 10), 0xFFFF0000);
 
             // Swap buffers to display on window
             renderer.swapBuffers();
