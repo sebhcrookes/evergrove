@@ -2,15 +2,19 @@ package evergrove;
 
 public class Configuration {
 
-    private String windowTitle;
-    private Vector2i contentSize; // Cannot be changed at runtime
-    private boolean windowResizeable;
+    /* Configuration set by the game. Default values are also set here */
+
+    private String windowTitle = "Evergrove";
+    private Vector2i contentSize = new Vector2i(500, 500); // Cannot be changed at runtime
+    private boolean windowResizeable = false;
+
+    private int updatesPerSecond = 60;
 
     /* === Rendering === */
 
     // FPS
-    private boolean isFPSCapped;
-    private int FPSCap;
+    private boolean isFPSCapped = true;
+    private int FPSCap = 60;
 
     public String getWindowTitle() {
         return windowTitle;
@@ -34,6 +38,14 @@ public class Configuration {
 
     public void setWindowResizeable(boolean windowResizeable) {
         this.windowResizeable = windowResizeable;
+    }
+
+    public int getUpdatesPerSecond() {
+        return updatesPerSecond;
+    }
+
+    public void setUpdatesPerSecond(int updatesPerSecond) {
+        this.updatesPerSecond = updatesPerSecond;
     }
 
     public boolean isFPSCapped() {

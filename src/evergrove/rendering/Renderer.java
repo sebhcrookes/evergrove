@@ -96,8 +96,18 @@ public class Renderer {
 
             try {
                 BufferedImage cImg = currentFont.getChar(c);
-                graphics.drawImage(cImg, pos.getX() + xOff, pos.getY() + yOff, null);
-                xOff += cImg.getWidth() - 1;
+
+                // Goes through each pixel of the image and draws any which are filled, in the given colour
+                for(int y = 0; y < cImg.getHeight(); y++) {
+                    for(int x = 0; x < cImg.getWidth(); x++) {
+                        int pixel = cImg.getRGB(x, y);
+                        if(pixel != 0) {
+                            setPixel(pos.getX() + xOff + x, pos.getY() + yOff + y, colour);
+                        }
+                    }
+                }
+
+                xOff += cImg.getWidth() - 1; // -1 to reduce spacing between characters
             } catch(IndexOutOfBoundsException e) {}
         }
     }

@@ -3,6 +3,7 @@ package game;
 import evergrove.Component;
 import evergrove.Evergrove;
 import evergrove.Vector2i;
+import evergrove.rendering.Image;
 import evergrove.rendering.Renderer;
 
 public class PrimaryComponent implements Component {
@@ -23,7 +24,6 @@ public class PrimaryComponent implements Component {
     public void render(Evergrove e, Renderer r) {
         r.fillRect(new Vector2i(100, 100), new Vector2i(200, 50), 0xFF00FF00);
 
-        r.drawText("This is being drawn from the primary component", new Vector2i(10, 10), 0xFFFF0000);
+        r.drawText("Evergrove Test Build - FPS: " + String.valueOf(e.getCurrentFPS()), new Vector2i(10, 10), 0xFFFF0000);
     }
-
 }
