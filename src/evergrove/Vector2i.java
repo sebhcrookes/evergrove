@@ -1,16 +1,16 @@
-package com.evergrove;
+package evergrove;
 
 public class Vector2i {
 
     private int x;
     private int y;
 
-    Vector2i() {
+    public Vector2i() {
         x = 0;
         y = 0;
     }
 
-    Vector2i(int pX, int pY) {
+    public Vector2i(int pX, int pY) {
         x = pX;
         y = pY;
     }

@@ -1,4 +1,9 @@
-package com.evergrove;
+package game;
+
+import evergrove.Component;
+import evergrove.Configuration;
+import evergrove.Evergrove;
+import evergrove.Vector2i;
 
 public class Launcher {
     public static void main(String[] args) {
@@ -7,6 +12,8 @@ public class Launcher {
         config.setContentSize(new Vector2i(1000, 500));
         config.setWindowResizeable(true);
 
-        Evergrove evergrove = new Evergrove(config);
+        PrimaryComponent primaryComponent = new PrimaryComponent();
+
+        Evergrove evergrove = new Evergrove(config, primaryComponent);
     }
 }

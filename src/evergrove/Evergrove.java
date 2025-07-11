@@ -1,16 +1,17 @@
-package com.evergrove;
+package evergrove;
 
-import com.evergrove.rendering.Image;
-import com.evergrove.rendering.Renderer;
+import evergrove.rendering.Renderer;
 
 public class Evergrove {
 
     private Configuration config;
+    private Component primaryComponent; // Could be a state manager, or just the current level (renders all other components in a tree-like manner)
     private MainWindow window;
     private Renderer renderer;
 
-    Evergrove(Configuration pConfig) {
+    public Evergrove(Configuration pConfig, Component pPrimaryComponent) {
         config = pConfig;
+        primaryComponent = pPrimaryComponent;
         window = new MainWindow(config);
         renderer = new Renderer(config, window);
 
@@ -39,12 +40,8 @@ public class Evergrove {
             // Clear buffer
             renderer.clear();
 
-            // Render all components and objects
-
-            renderer.drawRect(new Vector2i(0, 0), config.getContentSize(), 0xFFFFFFFF);
-            renderer.fillRect(new Vector2i(100, 100), new Vector2i(200, 50), 0xFF00FF00);
-
-            renderer.drawText("This is a test of the text rendering system!\n... and newline capabilities", new Vector2i(10, 10), 0xFFFF0000);
+            // Render all components
+            primaryComponent.render(this, renderer);
 
             // Swap buffers to display on window
             renderer.swapBuffers();

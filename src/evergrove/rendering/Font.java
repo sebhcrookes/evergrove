@@ -1,4 +1,4 @@
-package com.evergrove.rendering;
+package evergrove.rendering;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.evergrove;
+package evergrove;
 
 public class Configuration {
 

@@ -1,8 +1,8 @@
-package com.evergrove.rendering;
+package evergrove.rendering;
 
-import com.evergrove.Configuration;
-import com.evergrove.MainWindow;
-import com.evergrove.Vector2i;
+import evergrove.Configuration;
+import evergrove.MainWindow;
+import evergrove.Vector2i;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

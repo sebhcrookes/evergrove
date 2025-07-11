@@ -1,4 +1,4 @@
-package com.evergrove;
+package evergrove;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package com.evergrove.rendering;
+package evergrove.rendering;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
